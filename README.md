@@ -5,7 +5,7 @@ Zuure, M.B., Hinkley, L.B., Tiesinga, P.H.E., Nagarajan, S.S., & Cohen, M.X. (20
 
 BioRxiv preprint available [here](https://www.biorxiv.org/content/10.1101/2020.03.11.987040v1).
 
-This code is made available here to comply with the Journal of Neuroscience's code accessibility policy. It is suited only to analyze the data set made available [here](https://data.donders.ru.nl/). I have attempted to make it readable and usable, for verification purposes and for others to learn from. However, it remains academic code and is not fully polished.
+This code is made available here to comply with the Journal of Neuroscience's code accessibility policy. It is suited only to analyze the data set made available [here](https://doi.org/10.34973/a21y-3t91). I have attempted to make it readable and usable, for verification purposes and for others to learn from. However, it remains academic code and is not fully polished.
 
 This code performs computationally intensive analyses on a large (40 GB) data set. It is recommended that you execute it on a machine with >8 cores and >50 GB of RAM. Some parts, particularly the permutation testing, Granger causality analyses, and noisy eigenvector analysis, may take long (days) to run (but may be sped up, see **How to use**).
 
@@ -16,12 +16,12 @@ This code performs computationally intensive analyses on a large (40 GB) data se
 - bluewhitered plotting package v1.0, available [here](https://nl.mathworks.com/matlabcentral/fileexchange/4058-bluewhitered)
 - distributionPlot package v1.15, available [here](https://nl.mathworks.com/matlabcentral/fileexchange/23661-violin-plots-for-plotting-multiple-distributions-distributionplot-m)
  - the `extractfield` function from the MATLAB Signal Processing toolbox, available from MathWorks [here](https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/53545/versions/6/previews/tools/extractfield.m/index.html), to be placed in the `scripts` folder as `extractfield.m`
- - The data set to be analyzed, available [here](https://data.donders.ru.nl/).
+ - The data set to be analyzed, available [here](https://doi.org/10.34973/a21y-3t91).
 
 ## How to use
 
  1. Clone this repository (or download the files) to a location of your liking. 
- 2. Download the data set from [here](https://data.donders.ru.nl/) and put it in the `data` folder, so that the `data` folder contains subfolders `behavior`, `MEGica`, `S01`, etc. 
+ 2. Download the data set from [here](https://doi.org/10.34973/a21y-3t91) and put it in the `data` folder, so that the `data` folder contains subfolders `behavior`, `MEGica`, `S01`, etc. 
  3. Change the hardcoded paths in`setpaths.m` to point to the different directories and dependencies listed above.
  4. In MATLAB, navigate to the `scripts` folder and execute the `simon_0x` scripts in order. I recommend doing this in a tmux terminal or similar, as you want to be able to let this run in the background for multiple days; particularly `simon_01_GED_permtest.m`, `simon_04_Granger_causality.m`, and `simon_06_eigennoise.m` will be slow. Note: for faster but less accurate significance thresholding, change the `num_perm` parameter in `simon_01_GED_permtest.m`from 1000 to something lower. This will affect the number of significant components found per subject. To speed up `simon_06`, decrease the `iterations` parameter from 50 to something lower (decreasing the number of correlations computed per noise level), or consider running multiple instances of MATLAB in parallel, each executing the code for a single subject.
  5. After everything has been run, the `figures` folder contains the .pdfs that the manuscript figures are created from. The intermediate generalized eigendecomposition results and further analysis results are in the `results` folder, in the `S0x_GED.mat` and `S0x_ana.mat`files, respectively. These can be loaded into MATLAB and inspected. For context on what these (many) variables are, please refer to the code that created them; I've done my best to keep this readable.
