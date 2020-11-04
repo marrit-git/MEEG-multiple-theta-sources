@@ -1,9 +1,7 @@
 # Introduction
 This is the custom MATLAB code that accompanies the following publication:
 
-Zuure, M.B., Hinkley, L.B., Tiesinga, P.H.E., Nagarajan, S.S., & Cohen, M.X. (2020). _Multiple midfrontal thetas revealed by source separation of simultaneous MEG and EEG._  Manuscript submitted for publication.
-
-BioRxiv preprint available [here](https://www.biorxiv.org/content/10.1101/2020.03.11.987040v1).
+Zuure, M.B., Hinkley, L.B., Tiesinga, P.H.E., Nagarajan, S.S., & Cohen, M.X. (2020). Multiple midfrontal thetas revealed by source separation of simultaneous MEG and EEG. _Journal of Neuroscience, 40_(40), 7702-7713. DOI: https://doi.org/10.1523/JNEUROSCI.0321-20.2020
 
 This code is made available here to comply with the Journal of Neuroscience's code accessibility policy. It is suited only to analyze the data set made available [here](https://doi.org/10.34973/a21y-3t91). I have attempted to make it readable and usable, for verification purposes and for others to learn from. However, it remains academic code and is not fully polished.
 
